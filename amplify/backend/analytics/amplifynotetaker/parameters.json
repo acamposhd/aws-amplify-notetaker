@@ -1,0 +1,21 @@
+{
+    "appName": "amplifynotetaker",
+    "roleName": "pinpointLambdaRole551981dc",
+    "cloudformationPolicyName": "cloudformationPolicy551981dc",
+    "cloudWatchPolicyName": "cloudWatchPolicy551981dc",
+    "pinpointPolicyName": "pinpointPolicy551981dc",
+    "authPolicyName": "pinpoint_amplify_551981dc",
+    "unauthPolicyName": "pinpoint_amplify_551981dc",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    }
+}

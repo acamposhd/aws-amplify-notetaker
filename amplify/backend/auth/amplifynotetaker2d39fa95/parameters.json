@@ -1,6 +1,6 @@
 {
     "identityPoolName": "amplifynotetaker2d39fa95_identitypool_2d39fa95",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "amplif2d39fa95",
     "userPoolName": "amplifynotetaker2d39fa95_userpool_2d39fa95",
     "autoVerifiedAttributes": [

@@ -23,5 +23,11 @@
         }
       }
     }
+  },
+  "analytics": {
+    "amplifynotetaker": {
+      "service": "Pinpoint",
+      "providerPlugin": "awscloudformation"
+    }
   }
 }

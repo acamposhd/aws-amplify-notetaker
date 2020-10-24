@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { withAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
-import { API, Auth, graphqlOperation } from "aws-amplify";
+import { API, Auth, graphqlOperation, Amplify } from "aws-amplify";
 import { createNote, deleteNote, updateNote } from "./graphql/mutations";
 import { listNotes } from "./graphql/queries";
 import {
@@ -9,20 +9,19 @@ import {
   onUpdateNote,
 } from "./graphql/subscriptions";
 
+import awsconfig from './aws-exports';
+Amplify.configure(awsconfig);
+
 function App() {
   const [notes, setNotes] = useState([]);
   const [note, setNote] = useState("");
   const [id, setId] = useState("");
-  // const [state, setState] = useState({
-  //   id: "",
-  //   note: "",
-  //   notes: [],
-  // });
 
   useEffect(() => {
     getNotes();
-
     const owner = Auth.user.getUsername();
+
+    console.log(owner, 'owner ');
 
     const createNoteListener = API.graphql(
       graphqlOperation(onCreateNote, { owner })
